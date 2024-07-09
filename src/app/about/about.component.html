@@ -1,0 +1,31 @@
+<p> {{myname}}</p>
+<p>PRICE: {{price}} </p>
+<p>{{today | date : 'shortTime'}}</p>
+<button (click)="showHide()"
+    (click)="isShowNameBtn == false ? isShowNameBtn = true : isShowNameBtn = false">{{isShowNameBtn == true ? 'HIDE' :
+    'SHOW'}}</button>
+
+<div *ngFor="let pepole of peoples">
+    <h1>{{pepole.name | addFastName}}</h1>
+</div>
+
+<h1>pppppppppppp</h1>
+
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <label>User Id: </label> <br>
+    <input formControlName="id" type="text"> <br> <br>
+    <label>Password:</label> <br>
+    <input formControlName="password" type="password"> <br> <br>
+    <input type="submit" value="Submit">
+</form>
+
+<form [formGroup]="signupForm" (ngSubmit)="signup()">
+    <label for="">Name:</label>
+    <input type="text" formControlName="name"><br><br>
+    <label for="">email:</label>
+    <input type="email" formControlName="email"><br><br>
+    <label for="">password:</label>
+    <input type="password" formControlName="password"><br><br>
+
+    <input type="submit" value="Submit">
+</form>
